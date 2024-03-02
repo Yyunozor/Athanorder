@@ -18,5 +18,10 @@ async def ping(ctx):
     # Responds with 'Pong!' to '!ping'
     await ctx.send('Pong!')
 
+@bot.command()
+async def hello(ctx):
+    # Responds with 'Pong!' to '!ping'
+    await ctx.send('World!')
+
 # Replace 'YOUR_BOT_TOKEN' with your actual bot token
 bot.run(DISCORD_BOT_TOKEN)
