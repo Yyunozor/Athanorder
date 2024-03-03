@@ -1,11 +1,15 @@
 import discord
 from discord.ext import commands
+from discordLevelingSystem import DiscordLevelingSystem, LevelUpAnnouncement, RoleAward
+
 
 from config import DISCORD_BOT_TOKEN
 
 intents = discord.Intents.default()
 intents.messages = True  # If you need to listen to messages
 intents.message_content = True 
+
+bot = commands.Bot(..., intents=discord.Intents(messages=True, guilds=True, members=True))
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.event
@@ -22,6 +26,8 @@ async def ping(ctx):
 async def hello(ctx):
     # Responds with 'Pong!' to '!ping'
     await ctx.send('World!')
+    
+    
 
 # Replace 'YOUR_BOT_TOKEN' with your actual bot token
 bot.run(DISCORD_BOT_TOKEN)
