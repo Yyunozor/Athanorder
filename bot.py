@@ -6,7 +6,7 @@ from discordLevelingSystem import DiscordLevelingSystem, LevelUpAnnouncement, Ro
 from config import DISCORD_BOT_TOKEN
 
 intents = discord.Intents.default()
-intents.messages = True  # If you need to listen to messages
+intents.messages = True 
 intents.message_content = True 
 
 bot = commands.Bot(..., intents=discord.Intents(messages=True, guilds=True, members=True))
@@ -19,15 +19,10 @@ async def on_ready():
 
 @bot.command()
 async def ping(ctx):
-    # Responds with 'Pong!' to '!ping'
     await ctx.send('Pong!')
 
 @bot.command()
 async def hello(ctx):
-    # Responds with 'Pong!' to '!ping'
     await ctx.send('World!')
-    
-    
 
-# Replace 'YOUR_BOT_TOKEN' with your actual bot token
 bot.run(DISCORD_BOT_TOKEN)
